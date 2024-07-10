@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 export const Mongodb = () => {
 
-    mongoose.connect("mongodb://localhost:27017/", {
+    mongoose.connect(process.env.DATA_URI, {
         dbName: "APi"
     }).then(() => console.log("Connected")).catch(() => console.log("Disconnected"))
 

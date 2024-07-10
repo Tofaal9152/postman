@@ -1,8 +1,12 @@
 import { app } from "./app.js"
 import { Mongodb } from "./data/database.js"
-const port = 9999
+import { config } from 'dotenv'
+
+config({
+    path:"./data/config.env"
+}) 
 
 Mongodb()
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+app.listen(process.env.PORT, () => {
+    console.log(`Server is working`)
+}) 
