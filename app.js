@@ -9,12 +9,9 @@ app.use(express.json())
 mongoose.connect("mongodb://localhost:27017/", {
     dbName: "APi"
 }).then(() => console.log("Connected")).catch(() => console.log("Disconnected"))
-
+// start
 app.use("/users",router)
-
-app.get('/', (req, res) => {
-    res.send('Learning Postman')
-})
+//end
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
